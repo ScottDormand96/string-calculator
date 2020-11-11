@@ -4,7 +4,9 @@
   "description": "-",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test"
+    "unit-test": "mocha --watch test",
+    "lint": "standard",
+    "test": "npm run lint && npm run unit-test"
   },
   "repository": {
     "type": "git",
@@ -14,6 +16,20 @@
   "license": "MIT",
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^8.2.0"
+    "mocha": "^8.2.0",
+    "standard": "^16.0.1"
+  },
+  "dependencies": {},
+  "standard": {
+    "globals": [
+      "describe",
+      "beforeEach",
+      "expect",
+      "test",
+      "afterEach",
+      "beforeAll",
+      "afterAll",
+      "it"
+    ]
   }
 }
