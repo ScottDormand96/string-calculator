@@ -6,8 +6,7 @@ function calculator (stringNumber) {
     return 0
   }
 
-  const splitNumberList = stringNumber.split(',')
-
+  const splitNumberList = stringNumber.split(/[,\n]/)
   return splitNumberList.reduce((accumlator, number) => accumlator + parseInt(number), 0)
 }
 
@@ -39,6 +38,14 @@ describe('string calculator', () => {
   it('multiple digits string should return the sum', () => {
     // Arrange/Act
     const result = calculator('1,2,3')
+
+    // Assert
+    expect(result).to.equal(6)
+  })
+
+  it('new lines or commas string should return the sum', () => {
+    // Arrange/Act
+    const result = calculator('1\n2,3')
 
     // Assert
     expect(result).to.equal(6)
