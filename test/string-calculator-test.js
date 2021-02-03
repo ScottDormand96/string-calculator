@@ -6,8 +6,18 @@ function calculator (stringNumber) {
     return 0
   }
 
+  const summer = (accumlator, number) => {
+    const parseNumber = parseInt(number)
+
+    if (isNaN(parseNumber)) {
+      throw new Error('Error: Invalid parameter (the calculation parameter should contain only numbers).')
+    }
+
+    return accumlator + parseInt(number)
+  }
+
   const splitNumberList = stringNumber.split(/[,\n]/)
-  return splitNumberList.reduce((accumlator, number) => accumlator + parseInt(number), 0)
+  return splitNumberList.reduce(summer, 0)
 }
 
 describe('string calculator', () => {
@@ -49,5 +59,13 @@ describe('string calculator', () => {
 
     // Assert
     expect(result).to.equal(6)
+  })
+
+  it('integer and string calculation', () => {
+    // Arrange/Act
+    const wrappedCalc = function () { return calculator('1,A') }
+
+    // Assert
+    expect(wrappedCalc).to.throw('Error: Invalid parameter (the calculation parameter should contain only numbers).')
   })
 })
