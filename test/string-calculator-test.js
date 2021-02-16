@@ -20,7 +20,7 @@ function calculator (stringNumber) {
   return splitNumberList.reduce(summer, 0)
 }
 
-describe('string calculator', () => {
+describe('calculator', () => {
   it('empty string should return 0', () => {
   // Arrange/Act
     const result = calculator('')
