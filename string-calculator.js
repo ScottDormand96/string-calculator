@@ -1,7 +1,11 @@
+const parser = require('./parser')
+
 module.exports = function calculator (stringNumber) {
   if (stringNumber === '') {
     return 0
   }
+
+  const { delimiter, calculationString } = parser(stringNumber)
 
   const summer = (accumlator, number) => {
     const parseNumber = parseInt(number)
@@ -13,6 +17,6 @@ module.exports = function calculator (stringNumber) {
     return accumlator + parseInt(number)
   }
 
-  const splitNumberList = stringNumber.split(/[,\n]/)
+  const splitNumberList = calculationString.split(delimiter)
   return splitNumberList.reduce(summer, 0)
 }

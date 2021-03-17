@@ -50,4 +50,12 @@ describe('calculator', () => {
     // Assert
     expect(wrappedCalc).to.throw('Error: Invalid parameter (the calculation parameter should contain only numbers).')
   })
+
+  it('calculator with non default delimeter', () => {
+    // Arrange/Act
+    const result = calculator('//;\n1;2')
+
+    // Assert
+    expect(result).to.equal(3)
+  })
 })

@@ -1,7 +1,10 @@
 {
-  "name": "string-calculator",
-  "version": "1.0.0",
-  "description": "-",
+  "name": "@sdormand96/string-calculator",
+  "version": "1.1.0",
+  "engines" : { 
+    "node" : ">=10" 
+  },
+  "description": "calculate sum of strings of numbers based on configurable separator",
   "main": "index.js",
   "scripts": {
     "test:unit": "mocha test",
@@ -10,8 +13,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "-"
+    "url": "git+https://github.com/ScottDormand96/string-calculator.git"
   },
+  "bugs": {
+    "url": "https://github.com/ScottDormand96/string-calculator/issues"
+  },
+  "homepage": "https://github.com/ScottDormand96/string-calculator#readme",
   "author": "Scott Dormand and Neil McLaughlin",
   "license": "MIT",
   "devDependencies": {
